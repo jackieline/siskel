@@ -28,11 +28,11 @@ describe('Siskel', function() {
 
   describe('Movie model like property', function() {
 
-    it('should start out true', function() {
+    it('🤠  should start out true', function() {
       expect(model.get('like')).to.be.true;
     });
 
-    it('should toggle its state', function() {
+    it('🤠 should toggle its state', function() {
       model.toggleLike();
       expect(model.get('like')).to.be.false;
     });
@@ -41,21 +41,21 @@ describe('Siskel', function() {
 
   describe('Movie collection', function() {
 
-    it('should have a default comparator for title', function() {
+    it('🤠 should have a default comparator for title', function() {
       expect(collection.comparator).to.equal('title');
     });
 
-    it('should update its comparator', function() {
+    it('🤠 should update its comparator', function() {
       collection.sortByField('rating');
       expect(collection.comparator).to.equal('rating');
     });
 
-    it('should trigger sort when the comparator is changed', function() {
+    it('🤠 should trigger sort when the comparator is changed', function() {
       collection.sortByField('rating');
       expect(collection.sort).to.have.been.called;
     });
 
-    it('should trigger sort when a model changes', function() {
+    it('🤠 should trigger sort when a model changes', function() {
       model.toggleLike();
       expect(collection.sort).to.have.been.called;
     });
@@ -77,12 +77,12 @@ describe('Siskel', function() {
       Movie.prototype.toggleLike.restore();
     });
 
-    it('should re-render when the model changes', function() {
+    it('🤠 should re-render when the model changes', function() {
       model.toggleLike();
       expect(modelView.render).to.have.been.called;
     });
 
-    it('should toggle like state of its model', function() {
+    it('🤠  should toggle like state of its model', function() {
       modelView.handleClick();
       expect(model.toggleLike).to.have.been.called;
     });
@@ -102,7 +102,7 @@ describe('Siskel', function() {
       MoviesView.prototype.render.restore();
     });
 
-    it('should re-render when the collection sorts', function() {
+    it('🤠  should re-render when the collection sorts', function() {
       collection.sort();
       expect(collectionView.render).to.have.been.called;
     });
